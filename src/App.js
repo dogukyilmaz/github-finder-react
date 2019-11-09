@@ -20,13 +20,6 @@ class App extends Component {
   };
 
   // async componentDidMount() {
-  //   this.setState({ loading: true });
-  //   const res = await axios.get(
-  //     `https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-  //   );
-  //   //GITLAB
-  //   // const res = await axios.get('http://gitlab.com/api/v4/users?username=douscriptist');
-  //   this.setState({ users: res.data, loading: false });
   // }
 
   // Search Github Users
