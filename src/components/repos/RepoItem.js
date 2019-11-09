@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RepoItem = ({ repo }) => {
+const RepoItem = ({ repo, index }) => {
   return (
     <div className='card'>
       <h3>
-        <a href={repo.html_url}>{repo.name}</a>
+        <a href={repo.html_url}>
+          <span className='mr3 text-success'>{index + 1} - </span>
+          {repo.name}
+        </a>
       </h3>
     </div>
   );
