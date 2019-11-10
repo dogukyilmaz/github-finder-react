@@ -1,9 +1,10 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 const About = () => {
-  useEffect(() => {
-    let title = 'About';
-    document.title = title;
-  });
+  // useEffect(() => {
+  //   let title = 'About';
+  //   document.title = title;
+  //   // eslint-disable-next-line
+  // }, []);
   return (
     <Fragment>
       <h1>About this App</h1>

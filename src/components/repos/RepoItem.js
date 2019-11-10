@@ -5,7 +5,7 @@ const RepoItem = ({ repo, index }) => {
   return (
     <div className='card'>
       <h3>
-        <a href={repo.html_url}>
+        <a href={repo.html_url} target='_blank' rel='noopener noreferrer'>
           <span className='mr3 text-success'>{index + 1} - </span>
           {repo.name}
         </a>
