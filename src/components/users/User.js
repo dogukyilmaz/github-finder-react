@@ -1,16 +1,19 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useContext } from 'react';
 import Spinner from '../layout/Spinner';
 import Repos from '../repos/Repos';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import GithubContext from "../../context/github/githubContext"
 
-const User = ({ user, loading, getRepos, getUser, repos, match }) => {
+const User = ({ match }) => {
+  const githubContext = useContext(GithubContext)
+  const { getUsers, loading, users, getUserRepos, repos} = githubContext;
+
   // For as Component Did Mount just add an empty brackets []
   // If it will depend on sth. like [repos]
   // It will be called every time "repos" is changed.
   useEffect(() => {
-    getUser(match.params.login);
-    getRepos(match.params.login);
+    getUsers(match.params.login);
+    getUserRepos(match.params.login);
     // eslint-disable-next-line
   }, []);
 
@@ -28,7 +31,7 @@ const User = ({ user, loading, getRepos, getUser, repos, match }) => {
     public_gists,
     hireable,
     company
-  } = user;
+  } = users;
 
   if (loading) return <Spinner />;
   return (
@@ -96,14 +99,6 @@ const User = ({ user, loading, getRepos, getUser, repos, match }) => {
       </div>
     </Fragment>
   );
-};
-
-User.propTypes = {
-  loading: PropTypes.bool.isRequired,
-  user: PropTypes.object.isRequired,
-  getUser: PropTypes.func.isRequired,
-  getRepos: PropTypes.func.isRequired,
-  repos: PropTypes.array.isRequired
 };
 
 export default User;
