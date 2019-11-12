@@ -1,6 +1,4 @@
 https://dou-app.netlify.com
-https://dou-app.herokuapp.com
-
 
 ### `npm start`
 
