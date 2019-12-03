@@ -10,6 +10,9 @@ import GithubState from "./context/github/GithubState";
 import AlertState from "./context/alert/AlertState";
 import './App.css';
 
+//comment
+console.log("hello")
+
 const App = () => {
   return (
     <GithubState>
